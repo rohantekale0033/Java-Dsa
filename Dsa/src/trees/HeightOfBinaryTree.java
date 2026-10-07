@@ -1,7 +1,5 @@
 package trees;
-
-import trees.PreorderTraversal.Node;
-
+ 
 public class HeightOfBinaryTree {
 	static class Node {
 	int data;
@@ -16,7 +14,7 @@ public class HeightOfBinaryTree {
 }
 	static int height(Node root) {
 		if(root==null) {
-			return -1;
+			return 0;
 		}
 		
 		int leftHeight=height(root.left);
@@ -27,11 +25,14 @@ public class HeightOfBinaryTree {
 	
 
 	public static void main(String[] args) {
-		Node root =new Node(10);
-		 root.left=new Node(5);
-		 root.right=new Node(15);
-		 root.left.left=new Node(2);
-		 root.left.right=new Node(7);
+		Node root = new Node(10);
+		root.left = new Node(5);
+		root.right = new Node(15);
+
+		root.left.left = new Node(2);
+		root.left.right = new Node(7);
+
+		root.right.right = new Node(20);
 		System.out.print(height(root) +"  "); 
 
 	}
